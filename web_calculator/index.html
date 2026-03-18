@@ -8,7 +8,9 @@
 </head>
 <body>
     <div class="calculator">
-        <input type="text" class="calculator-screen" value="" disabled />
+        <!-- 添加标签以提高可访问性 -->
+        <label for="calculator-screen" class="sr-only">Calculator Screen</label>
+        <input id="calculator-screen" type="text" class="calculator-screen" value="" disabled placeholder="0" title="Calculator Screen" />
         <div class="calculator-keys">
             <button type="button" class="operator" value="+">+</button>
             <button type="button" class="operator" value="-">-</button>

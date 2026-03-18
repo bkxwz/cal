@@ -69,12 +69,23 @@ function resetCalculator() {
     calculator.operator = null;
 }
 
-// 添加音效功能
+// 完善音效功能
 const audio = new Audio('click-sound.mp3');
 
+// 添加音频加载错误处理
+audio.addEventListener('error', () => {
+    console.error('音效文件加载失败，请检查路径或文件是否存在。');
+});
+
 function playSound() {
-    audio.currentTime = 0; // 重置音频播放时间
-    audio.play();
+    if (audio.readyState >= 2) { // 确保音频已加载
+        audio.currentTime = 0; // 重置音频播放时间
+        audio.play().catch(error => {
+            console.error('音效播放失败:', error);
+        });
+    } else {
+        console.warn('音效文件尚未加载完成。');
+    }
 }
 
 document.querySelector('.calculator-keys').addEventListener('click', (event) => {

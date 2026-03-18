@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.example.calculator" version="1.0.0">
+    <name>Calculator</name>
+    <description>Calculator with sound</description>
+    <author email="youremail@example.com" href="https://example.com">Your Name</author>
+    <content src="web_calculator/index.html" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon src="res/icon/android/icon-192x192.png" density="xxxhdpi" />
+    </platform>
+</widget>
